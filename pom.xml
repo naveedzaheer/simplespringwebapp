@@ -72,7 +72,7 @@
         <configuration>
           <schemaVersion>V2</schemaVersion>
           <resourceGroup>nzlinuxappdemo-rg</resourceGroup>
-          <appName>nzsimplespring</appName>
+          <appName>nzsimplespring2</appName>
           <pricingTier>P1v2</pricingTier>
           <region>eastus</region>
           <runtime>
