@@ -8,7 +8,8 @@ export DEMO_VNET_PL_SUBNET=pl_subnet
 export DEMO_VNET_PL_SUBNET_CIDR=10.0.2.0/24
 export DEMO_APP_PLAN=att-linux-app-plan
 export DEMO_APP_NAME=att-linux-demo-app
-export DEMO_APP_VM=att-linux-demo-vm
+export DEMO_APP_VM=pldemovm
+export DEMO_APP_VM_ADMIN=azureuser
 export DEMO_VM_IMAGE=MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest
 export DEMO_VM_SIZE=Standard_DS2_v2
 export DEMO_APP_KV=att-linux-demo-kv
@@ -49,7 +50,7 @@ az network vnet subnet create -g $APP_PE_DEMO_RG --vnet-name $DEMO_VNET -n $DEMO
 # - Azure CLI
 # - Maven
 az vm create -n $DEMO_APP_VM -g $APP_PE_DEMO_RG --image MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest \
-    --vnet-name $DEMO_VNET --subnet $DEMO_VNET_PL_SUBNET --public-ip-sku Standard --size $DEMO_VM_SIZE
+    --vnet-name $DEMO_VNET --subnet $DEMO_VNET_PL_SUBNET --public-ip-sku Standard --size $DEMO_VM_SIZE --admin-username $DEMO_APP_VM_ADMIN
 
 # Install VS Code - https://code.visualstudio.com/download
 # Install Java Extension Pack for VSCode - https://code.visualstudio.com/blogs/2017/09/28/java-debug
